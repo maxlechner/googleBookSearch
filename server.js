@@ -11,6 +11,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+// to enable Mongoose connection
+require("./config/connect");
+
 // Define API routes here
 
 // Send every other request to the React app
