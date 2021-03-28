@@ -11,9 +11,8 @@ function App() {
       <NavTop/>
       <Header/>
       <Switch>
-          <Route exact strict  path="/" component={Search}/>
+          <Route exact strict  path="/search" component={Search}/>
           <Route exact strict  path="/saved" component={Saved}/>
-          {/* <Route exact path="*" component={Search} /> */}
         </Switch>
     </Router>
     

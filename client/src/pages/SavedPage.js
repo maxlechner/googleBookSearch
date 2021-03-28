@@ -20,7 +20,7 @@ class Saved extends Component {
       API.deleteBook(id)
           .then(res => this.componentDidMount())
           .catch(err => console.log(err))
-          .then(alert("The book has been deleted!"))
+          .then(alert("Book Deleted"))
   }
 
   render() {
