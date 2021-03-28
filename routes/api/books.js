@@ -1,38 +1,15 @@
 const router = require("express").Router();
+const booksController = require("../../controllers/bookController");
 
-const { Book } = require("../models");
+// Matches with "/api/books"
+router.route("/")
+  .get(bookController.findAll)
+  .post(bookController.create);
 
-router 
-    route("/books")
-    .get((req, res)=> {
-        Book
-            .find()
-            .then(books => res.json(books))
-            .catch(err => console.log(err));
-    })
-    
-    .post( "/books", (req, res) => {
 
-        const {
-            title,
-            authors,
-            description,
-            image,
-            link
-        } = req.body;
-
-        Book
-            .create({
-                title,
-                authors,
-                description,
-                image,
-                link
-            })
-            .then(newBook => res.json(newBook))
-            .catch(err => console.log(err));
-
-    });
+// Matches with "/api/books/google/:input"
+router.route("/:id")
+  .get(bookController.findById)
+  .delete(bookController.remove);
 
 module.exports = router;
-
