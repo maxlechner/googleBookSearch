@@ -17,7 +17,7 @@ const SearchBooks = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    API.getBooksGoo(search)
+    API.getBooksAPI(search)
     .then(res => {
       if (res.data.items === "error") {
         throw new Error(res.data.items);
@@ -26,7 +26,6 @@ const SearchBooks = () => {
         let results = res.data.items
         results = results.map(result => {
           result = {
-            key: result.id,
             id: result.id,
             title: result.volumeInfo.title,
             authors: result.volumeInfo.authors,
@@ -52,7 +51,7 @@ const SearchBooks = () => {
     API.saveBook(savedBooks)
       .then(console.log(savedBooks))
       .catch(err => console.log(err))
-      .then(alert("Great choice! The book has been saved!"))
+      .then(alert("Book saved"))
   };
 
 

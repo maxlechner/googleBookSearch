@@ -1,21 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { Component } from "react";
+import { Container } from "react-bootstrap";
 import API from "../utils/API";
+import SavedBookCard from "../components/SavedBookCard"
 
-function SavedPage() {
-    const [books, setBooks] = useState([]);
+class Saved extends Component {
+  state = {
+      savedBooks: []
+  };
 
-    useEffect(( ) => {
+  //when this component mounts, grab all books that were save to the database 
+  componentDidMount() {
+      API.getBooks()
+          .then(res => this.setState({ savedBooks: res.data }))
+          .catch(err => console.log(err))
+  }
 
-        API
-            .getBooks()
-            .then(({ data }) => {
-                setBooks(data);
-            });
+  //function to remove book by id
+  handleDeleteButton = id => {
+      API.deleteBook(id)
+          .then(res => this.componentDidMount())
+          .catch(err => console.log(err))
+          .then(alert("The book has been deleted!"))
+  }
 
-    }, [setBooks]);
-
-    return <h1>Save Books</h1>;
-
+  render() {
+      return (
+          <div>
+              <Container>
+                  <SavedBookCard savedBooks={this.state.savedBooks} handleDeleteButton={this.handleDeleteButton} />
+              </Container>
+          </div>
+      )
+  }
 }
 
-export default SavedPage;
+export default Saved
