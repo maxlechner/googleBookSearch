@@ -3,8 +3,6 @@ import API from "../utils/API";
 import SearchForm from "../components/Form";
 import BookCard from "../components/BookCard";
 
-
-
 const SearchBooks = () => {
   const [search, setSearch] = useState('');
   const [books, setBooks] = useState([]);
@@ -42,8 +40,6 @@ const SearchBooks = () => {
     .catch(err => setError(error));
   }
 
-
-
   const handleSavedButton = e => {
     e.preventDefault();
     let savedBooks = books.filter(book => book.id === e.target.id)
@@ -53,8 +49,6 @@ const SearchBooks = () => {
       .catch(err => console.log(err))
       .then(alert("Book saved"))
   };
-
-
 
   return (
     <div className='container fluid'>
