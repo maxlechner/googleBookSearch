@@ -1,26 +1,23 @@
 import axios from "axios";
 
 const API = {
-    async getBooks( book ) {
-        return {
-            data: [
-                {
-                    id: 1,
-                    authors: ["Suzanna Collins"],
-                    image: "hats",
-                    link: "cats",
-                    title: "The Hunger Games"
 
-                }
-            ]
-        }
-    },
-    async getBooks() {
-        return axios.get( "api/books" );
-    },
-    async addBook( book ) {
-        return axios.post( "api/books", book );
-    }
+  // Gets the books from Google
+  getBooksAPI: function (input) {
+    return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + input);
+  },
+  // Gets all books
+  getBooks: function () {
+    return axios.get("/api/books");
+  },
+  // Deletes the book with the given id
+  deleteBook: function (id) {
+    return axios.delete("/api/books/" + id);
+  },
+  // Saves a book to the database
+  saveBook: function (bookData) {
+    return axios.post("/api/books", bookData);
+  }
 };
 
 export default API;
