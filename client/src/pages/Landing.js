@@ -7,7 +7,7 @@ const Landing = () => {
 
             <div className='container'>
                 <div className='row'>
-                <div className='col-12'>
+                <div className='col-10'>
                     <h4> Welcome to the Google Books Search Page! </h4>
                     <br></br>
                     <p>Click either button below to search for your favorite books</p>
@@ -15,16 +15,16 @@ const Landing = () => {
                 </div>
                 </div>
             </div>
+
             <div className='container' >
-                <div className='col-4  justify-content-center'>
+                <div className='col-8  justify-content-center'>
                     <a href={"/search"}> {" "} <button className=" btn btn-success m-2"> SEARCH BOOKS </button>{" "} </a>
-                    <a href={"/saved"}> {" "} <button className=" btn btn-success m-2"> REVIEW SAVED </button>{" "} </a>
+                    <a href={"/saved"}> {" "} <button className=" btn btn-success m-2"> REVIEW SAVED BOOKS </button>{" "} </a>
                 </div>
             </div>
 
         </div>
     );
 };
-
 
 export default Landing;
