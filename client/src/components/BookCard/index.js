@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-// import {Row, Col} from "../Grid"
-// import { Card, Button, Col, Row, Modal } from "react-bootstrap";
+import React from "react";
 
 const BookCard = props => {
-
-  
+ 
     return (
       <div className="container">
         <h3>Search Results</h3>
