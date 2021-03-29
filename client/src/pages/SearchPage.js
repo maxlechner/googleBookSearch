@@ -4,6 +4,8 @@ import SearchForm from "../components/Form";
 import BookCard from "../components/BookCard";
 
 const SearchBooks = () => {
+
+    // state handlers for updating information
   const [search, setSearch] = useState('');
   const [books, setBooks] = useState([]);
   const [error, setError] = useState('');
