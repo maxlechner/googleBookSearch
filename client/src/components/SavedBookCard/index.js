@@ -1,6 +1,6 @@
 import React from "react";
 
-const SavedItemsCard = props => {
+const SavedBookCard = props => {
   return (
     <div className="container">
       <h3>Your Saved Books</h3>
@@ -37,4 +37,4 @@ const SavedItemsCard = props => {
   );
 };
     
-export default SavedItemsCard
+export default SavedBookCard

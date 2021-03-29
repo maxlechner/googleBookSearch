@@ -15,7 +15,7 @@ const BookCard = props => {
                     <h5 className="">{book.authors}</h5>
                   </div>
                   <div className='col-4  justify-content-end'>
-                    <a href={book.link} target="_blank" rel="noreferrer"> <button className="btn-primary btn m-2"> VIEW</button> </a>
+                    <a href={book.link} target="blank" rel="noreferrer"> <button className="btn-primary btn m-2"> VIEW</button> </a>
                     <button className=" btn btn-success m-2" id={book.id} onClick={(event) => props.handleSavedButton(event)} > SAVE </button>
                   </div>
                 </div>
